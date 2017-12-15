@@ -1,0 +1,387 @@
+// Common styles of the project
+
+html
+	+selection
+		background: rgba(0, 0, 0, .2)
+		color: #fff
+
+html, body
+	height: 100%
+
+body
+	color: $text
+	+lr
+
+*
+	box-sizing: border-box
+	&:after,
+	&:before
+		box-sizing: inherit
+
+a
+	text-decoration: none
+	outline: none
+
+
+h1, h2, h3, h4, h5, h6
+	margin: 0 0 .8em
+	font-weight: normal
+	line-height: 1.1
+
+h1
+	font-size: 2em
+h2
+	font-size: 1.8em
+h3
+	font-size: 1.6em
+h4
+	font-size: 1.5em
+h5
+	font-size: 1.4em
+h6
+	font-size: 1.3em
+
+b, strong
+	font-weight: normal
+
+p
+	margin: 0
+
+.solo
+	&-page
+		width: 94%
+		max-width: 1025px
+		margin: 0 auto
+		//box-shadow: 0 0 6px rgba(0, 0, 0, .2)
+	&-header
+		border-bottom: 1px solid $border
+		+r(450)
+			padding: 0 10px
+	&-footer
+		width: 94%
+		max-width: 530px
+		margin: 0 auto
+		padding-bottom: 20px
+		text-align: center
+		&_desc
+			font-size: 11px
+			line-height: 1.4
+			color: $text
+			+lr
+		&_list
+			font-size: 0
+			margin: 12px 0 10px
+		&_item
+			display: block
+			text-align: left
+			margin-bottom: 5px
+		&_link
+			display: block
+			font-size: 11px
+			text-decoration: underline
+			color: #848BB8
+			+lr
+			&:hover
+				text-decoration: none
+
+.title
+	&__solo
+		font-size: 28px
+		line-height: 1.42
+		color: $text
+		+ls
+
+.calculator
+	&__dose
+		position: relative
+		padding: 24px 0 0
+		// border-bottom: 3px solid $border
+	&__pens
+		display: flex
+		justify-content: space-between
+		+r(800)
+			flex-wrap: wrap
+
+.slider-ui
+	border-bottom: 4px solid $border
+	&__container
+		position: relative
+		padding-bottom: 24px
+	&__text
+		position: absolute
+		top: 35%
+		left: 0
+		width: 300px
+		display: flex
+		padding: 10px 0
+		flex: 0 1 28%
+		+try(-50%)
+		+r(750)
+			width: auto
+			display: flex
+			align-items: center
+			position: relative
+			top: 0
+			+try(0)
+		+r(450)
+			margin: 0 10px
+		// width: 28%
+		&.is-changed
+			top: -20px
+			left: 0
+			+try(0)
+			+r(750)
+				top: 0
+	&__pic
+		position: relative
+		display: inline-block
+		vertical-align: top
+		margin-right: 20px
+		min-width: 45px
+		width: 45px
+		height: 49px
+	&__desc
+		font-size: 18px
+		color: #666
+		+ls
+	&__num
+		width: 100%
+		font-size: 20px
+		color: #000
+		+lb
+	&__range
+		position: absolute
+		bottom: 0
+		left: 0
+		width: calc(100% - 46px)
+		margin-left: 10px
+		+try(4px)
+		position: relative
+		height: 4px
+		background-color: $border
+
+.pen
+	position: relative
+	display: flex
+	flex-direction: row
+	width: 50%
+	margin-top: 10px
+	padding-top: 50px
+	+r(800)
+		width: 100%
+		flex-direction: row-reverse
+	&_right
+		flex-direction: row-reverse
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 1px
+			height: 80%
+			background-color: #E8E8E8
+			+r(800)
+				content: none
+		.pen__container
+			padding: 0 10% 0 0
+		.days__btn.is-active
+			background-color: $fiolet
+	&__container
+		width: 80%
+		min-width: calc(100% - 150px)
+		padding: 0 0 0 10%
+		+r(800)
+			padding: 0 10% 0 0
+		+r(450)
+			min-width: calc(100% - 80px)
+
+	&__title
+		font-size: 28px
+		line-height: 1.4
+		text-align: center
+		color: #000
+		+ll
+		small
+			display: block
+			text-align: center
+			margin-top: 5px
+			font-size: .42em
+			color: #919191
+	&__box
+		text-align: center
+	&__item
+		display: inline-block
+		margin: 0 10px 10px
+		&.is-hidden
+			display: none
+	&__pic
+		position: relative
+		width: 20%
+		min-width: 150px
+		+r(450)
+			width: 80px
+			min-width: 80px
+	&__img
+		position: absolute
+		bottom: 60px
+		left: 50%
+		+trx(-50%)
+
+.days
+	margin: 0 auto 35px
+	&__title
+		text-align: center
+	&__list
+		width: 200px
+		font-size: 0
+		margin: 0 auto
+		padding-left: 0
+		margin-bottom: 30px
+	&__item
+		display: inline-block
+		vertical-align: top
+		padding: 7px
+
+	&__btn
+		display: inline-block
+		vertical-align: top
+		width: 14px
+		height: 14px
+		border: none
+		margin: 0
+		padding: 0
+		background-color: $n
+		border-radius: 100%
+		border: 1px solid $border
+		outline: none
+		&:focus
+			box-shadow: 0 0 2px yellow
+		&.is-active
+			background-color: $green
+			border-color: $n
+
+.resault
+	&__week
+		font-size: 18px
+		color: #666
+		+lb
+	&__desc
+		font-size: 16px
+		color: #C2C2C2
+		+lr
+
+/*-------- slick -----------------------*/
+
+.slick
+	width: 92%
+	margin: 0 auto
+	+r(450)
+		overflow: hidden
+	&-track
+		padding: 10px 0
+	&-slide
+		width: 114px
+		height: 80px
+		cursor: pointer
+		&.before-active
+			.slick__item
+				font-size: 48px
+				opacity: .8
+				+r(400)
+					font-size: 30px
+		&.slick-current
+			background-color: $fiolet
+			box-shadow: 0 0 20px rgba(169, 140, 229, 0.6)
+			.slick__item
+				font-size: 64px
+				line-height: 80px
+				color: #fff
+				opacity: 1
+				+r(400)
+					font-size: 46px
+			+ .slick-slide
+				.slick__item
+					font-size: 48px
+					opacity: .8
+					+r(400)
+						font-size: 30px
+				// + .slick-slide
+				// 	.slick__item
+				// 		font-size: 36px
+				// 		opacity: .6
+				// 		+r()
+
+	&__item
+		font-size: 28px
+		width: 114px
+		height: 80px
+		text-align: center
+		line-height: 80px
+		+lt
+		font-weight: 100
+		opacity: .4
+
+
+/*-------- slide ui -----------------------------*/
+
+.ui-slider
+	.slider-ui__dragger
+		position: absolute
+		left: 0
+		top: -.6em
+		display: inline-block
+		border: none
+		width: 46px
+		height: 22px
+		background-color: #FFF
+		box-shadow: 0px 1px 0px #E3E3E3, 0px 7px 12px rgba(0, 0, 0, 0.12)
+		vertical-align: top
+		border-radius: 18px
+		cursor: pointer
+		z-index: 10
+		outline: none
+		&:after
+			content: ''
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 4px
+			height: 4px
+			background-color: $border
+			border-radius: 100%
+			+try(-50%)
+		&:focus
+			border: 1px solid yellow
+		&_dots
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 100%
+			height: 4px
+			border-radius: 100%
+			// background-color: $border
+			transform: translate(-50%, -50%)
+			&:after,
+			&:before
+				content: ''
+				position: absolute
+				top: 50%
+				width: 4px
+				height: 4px
+				background-color: $border
+				border-radius: 100%
+				+try(-50%)
+			&:after
+				left: 25%
+			&:before
+				left: 75%
+
+/*-------------------------------------*/
+.c-green
+	color: $green
+
+.c-fiolet
+	color: $fiolet
+.c-gray
+	color: #B0B0B0
